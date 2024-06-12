@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main{
+            height:150px;
+            width:400px;
+            display:flex;
+            margin:auto;
+            margin-top:100px;
+            padding-left:70px;
+        }
+        div {
+            height: 100px;
+            width:100px;
+            border:1px solid black;
+            border-radius: 15px;
+            margin-top:20px;
+            margin-right:10px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="dice1"></div>
+        <div id="dice2"></div>
+        <div id="dice3"></div>
+
+    </div>
+
+    <button id="roller">Roll the Dice</button>
+    
+</body>
+</html>
+
+<script>
+    let d1 = document.getElementById("dice1")
+    let d2 = document.getElementById("dice2")
+    let d3 = document.getElementById("dice3")
+    let roller = document.getElementById("roller")
+
+    let d1num =() => {
+
+        let num = Math.floor(Math.random()*6)+1;
+        console.log(num)
+        d1.textContent = num;
+        d1.style.alignContent = "center";
+    }
+    let d2num =() => {
+
+        let num = Math.floor(Math.random()*6)+1;
+        console.log(num)
+        d2.textContent = num;
+        d2.style.alignContent = "center";
+    }
+    let d3num =() => {
+
+    let num = Math.floor(Math.random()*6)+1;
+    console.log(num)
+    d3.textContent = num;
+    d3.style.alignContent = "center";
+    }
+
+    roller.addEvenListener("click",()=>{
+        d1num();
+        d2num();
+        d3num();
+    })
+</script>
